@@ -1,0 +1,7 @@
+vuelta1 = VueltaClase("VER",2025,"Hungary",'Q',2)
+vuelta1.cargar_todo()
+vuelta1.generar_png_telemetria()
+
+vuelta2 = VueltaClase("VER",2025,"Hungary",'Q')
+vuelta2.cargar_todo()
+vuelta2.generar_png_telemetria()
