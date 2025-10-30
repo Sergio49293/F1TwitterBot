@@ -98,10 +98,10 @@ class VueltaClase():
         self.stint = self.vuelta['Stint']
 
     def cargar_vels_punta(self):
-        self.SpeedFL = self.vuelta['SpeedFL']
-        self.SpeedI1 = self.vuelta['SpeedI1']
-        self.SpeedI2 = self.vuelta['SpeedI2']
-        self.SpeedST = self.vuelta['SpeedST']
+        self.vel_FL = self.vuelta['SpeedFL']
+        self.vel_I1 = self.vuelta['SpeedI1']
+        self.vel_I2 = self.vuelta['SpeedI2']
+        self.vel_ST = self.vuelta['SpeedST']
   
     def cargar_otros_attr(self):
         self.hora_comienzo = self.vuelta['LapStartTime']
