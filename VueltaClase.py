@@ -41,6 +41,8 @@ class VueltaClase():
         self.velI2 = None
         self.velST = None
         
+        self.vuelta_txt = self.n_vuelta if self.n_vuelta is not None else "R"
+        
     def cargar_todo(self):
         self.cargar_sesion()    
         self.cargar_color()
@@ -119,12 +121,11 @@ class VueltaClase():
         plt.subplots_adjust(hspace=0.5, top=0.93, bottom=0.05,left=0.05,right=0.95)
 
         #Titulo con colores
-        self.vuelta_txt = self.n_vuelta if self.n_vuelta is not None else "Rápida"
-             
         self.fig.text(0.5, 0.97, f'Telemetria {self.nombre_completo_sesion} Vuelta {self.vuelta_txt}:', ha='center', fontsize=16)
         self.fig.text(0.5, 0.95, self.piloto, color = self.color, ha='center', fontsize=16, fontweight='bold')
   
     def graficar_telemetria(self):
+        
         #Obtener los datos máximos y mínimos para el gráfico
         metros = (self.telemetria['Distance']).max()
         metros = math.ceil(metros / 100) * 100
