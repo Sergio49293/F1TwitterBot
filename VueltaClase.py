@@ -25,6 +25,8 @@ class VueltaClase():
         
         self.telemetria = None
         self.tiempo = 0
+        self.tiempo_s = 0
+        
         #Tiempo de sectores
         self.tiempo_sector1= None
         self.tiempo_sector2 = None
@@ -76,7 +78,11 @@ class VueltaClase():
         if self.n_vuelta !=None:
             self.vuelta = self.sesion.laps.pick_drivers(self.piloto).iloc[self.n_vuelta+1] 
         else: 
-            self.vuelta = self.sesion.laps.pick_drivers(self.piloto).pick_fastest()             
+            self.vuelta = self.sesion.laps.pick_drivers(self.piloto).pick_fastest() 
+            
+        self.tiempo = self.vuelta['LapTime']
+        self.tiempo_s = self.tiempo.total_seconds()
+             
     
     def cargar_telemetria(self):
         self.telemetria = self.vuelta.get_telemetry()     
